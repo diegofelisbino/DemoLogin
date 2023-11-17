@@ -34,7 +34,9 @@ builder.Services
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+Configuration.JwtKey = app.Configuration.GetValue<string>("JwtKey");
+    
+    // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
